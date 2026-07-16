@@ -1,0 +1,128 @@
+[10:25 am, 15/7/2026] mubashir brototype: 1). Setting Up ReactJS with Vite
+A). Introduction to Vite:
+
+                           I). What is Vite?
+                           II). Key advantages over Create 
+                                React App (CRA): faster 
+                                development server, 
+                                optimized builds, simplified 
+                                configuration.
+B). Project Setup:
+                I). Initialize a new React project using 
+                     Vite.
+II). Explore and understand the structure of 
+     vite.config.js.
+[10:25 am, 15/7/2026] mubashir brototype: 2). Core React Concepts
+A). Understanding Single Page Applications (SPA) and client-side rendering.
+B). Components: Functional components and their architecture.
+C). Render cycle and re-rendering logic.
+D). Props and State management.
+E). Component Lifecycle.
+F). Introduction to JSX.
+G). Handling DOM Events in React.
+[10:26 am, 15/7/2026] mubashir brototype: 3). React Hooks
+A). useState, useEffect, useRef: Syntax, purpose, and practical usage.
+[10:26 am, 15/7/2026] mubashir brototype: 4). Project: To-Do List Application
+A). Develop a React-based To-Do list application that includes the following features:
+B). Add, update, delete, and display To-Do items.
+C). Mark items as complete.
+D). Assign deadlines to tasks.
+E). Generate toast notifications for overdue tasks.
+[10:27 am, 15/7/2026] mubashir brototype: 1st Week ☝🏻
+[10:30 am, 15/7/2026] mubashir brototype: 1). Routing with React Router DOM
+A). Introduction to react-router-dom
+B). Defining and navigating routes
+C). Passing route parameters
+D). Implementing nested routing using Outlet
+E). Handling dynamic paths
+[10:30 am, 15/7/2026] mubashir brototype: 2). Global State Management with Context API
+A). Creating and using Context
+B). Using hooks such as:
+C). useContext
+D). useNavigate
+E). useParams
+F). useCallback
+G). useMemo
+H). Managing and accessing global authentication 
+     state
+[10:30 am, 15/7/2026] mubashir brototype: 3). Advanced React Patterns
+A). Creating and using custom hooks
+B). Understanding and implementing Higher-Order Components (HOC)
+[10:31 am, 15/7/2026] mubashir brototype: 4). Bundling and Build Tools
+A). Overview of build tools:
+I). Babel
+II). Webpack
+[10:31 am, 15/7/2026] mubashir brototype: 5). Understanding how React projects are bundled
+Understanding how React projects are bundled
+[10:31 am, 15/7/2026] mubashir brototype: 6). Building and serving a production-ready application
+Building and serving a production-ready application
+[10:31 am, 15/7/2026] mubashir brototype: 7). Project: Blog Posting Application
+Build a multi-page blog application with the following features:
+A). Authentication:
+I). Implement user authentication using Firebase Auth
+II). Manage authentication state globally using Context API
+
+B). Blog Operations:
+    I). Add, edit, and delete blog posts (text-only)
+II). Store blog posts in Firebase Firestore
+III). Navigate between pages:
+       i).  Login Page
+       ii). Blog List Page
+       iii). Add/Edit Blog Page
+C). Routing:
+     I). Use react-router-dom to manage page 
+        navigation and route parameters
+D). Build & Deployment:
+     I). Use Vite/Webpack for optimized builds
+     II). Build and serve the application for 
+         production
+[10:31 am, 15/7/2026] mubashir brototype: 2nd Week ☝🏻
+[10:32 am, 15/7/2026] Amal: 👍👍
+[10:32 am, 15/7/2026] mubashir brototype: 1). Redux for State Management
+A) Introduction to Redux and the need for global state management
+B) Understanding the Redux data flow
+C) Configuring and using the Redux store
+D) Working with reducers, actions, and dispatch
+[10:33 am, 15/7/2026] mubashir brototype: 2). Redux Middleware & DevTools
+A) Using middleware (e.g., Redux Thunk)
+B) Connecting the app with Redux DevTools for debugging
+[10:33 am, 15/7/2026] mubashir brototype: 3). Error Handling and Validation
+A) Implementing Error Boundaries in React
+B) Enabling Strict Mode to identify potential issues
+C) Using React Hook Form for handling form data
+     C1) Basic validations
+     C2) Managing form state
+[10:33 am, 15/7/2026] mubashir brototype: 4). OLX-like E-Commerce Platform Build a simple e-commerce application with the following core features:
+A). Login Page: Authenticate users (can be mocked or Firebase-auth based)
+B). Sell Page: Add or update product listings
+C). Product Listing Page: View all listed products
+D). Cart Page: Add or update items in cart
+E). Checkout Page: Mark selected product as “Sold” and clear it from the available list
+F). State Management:
+
+                   I). Use Redux to manage:
+                           i).  Product listings
+                           ii). Cart items
+                           iii). Authentication status
+                           iv). Checkout updates
+G). Form Handling:
+                    I). Use React Hook Form to:
+                              1). Capture product details
+                              2). Validate inputs (e.g., 
+                                   required fields, price 
+                                   format)
+H). Error Handling:
+                 i). Wrap critical components with Error 
+                    Boundaries to gracefully handle UI 
+                    crashes
+[10:33 am, 15/7/2026] mubashir brototype: 5). Zustand
+A) Basic setup with the create function.
+B) Understand how Zustand avoids boilerplate.
+C) Store creation, Use the Store in a Component
+D) Read and update the state using hooks.
+[10:33 am, 15/7/2026] mubashir brototype: 6). MobX
+A) What is Mobx, and why is it used 
+B) Mobx Concepts → Observables, Actions, Computed values, Reactions 
+C) Learn Integration with React 
+D) Observable with Class Components and Functional Components
+E) Understand the basics of what is makeObservable and makeAutoObservable
