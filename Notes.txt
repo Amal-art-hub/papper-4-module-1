@@ -199,3 +199,126 @@ In Client-Side Rendering, the browser creates the UI by executing JavaScript, wh
 complete HTML before sending it to the browser. CSR provides a smoother and faster user experience after the initial load, making it 
 ideal for interactive applications. SSR offers a faster initial page load and better SEO because the browser receives a fully rendered 
 HTML pag
+
+//===============
+Why do we use JSX?
+
+We use JSX because it makes React code easier to write, read, and understand. JSX allows us to write HTML-like syntax inside JavaScript, 
+which makes building user interfaces more intuitive. Although it looks like HTML, it is actually converted into React.createElement() 
+calls during compilation. JSX is not mandatory, but it is the standard way of writing React components because it improves code 
+readability and developer productivity
+
+
+
+Is JSX HTML?
+
+No, JSX is not HTML. JSX looks similar to HTML, but it is a syntax extension of JavaScript. It allows developers to write HTML-like 
+syntax inside JavaScript, but it follows JavaScript rule
+
+
+Why do we use className instead of class?
+
+
+We use className instead of class in JSX because JSX is written inside JavaScript, and class is a reserved keyword in JavaScript used for 
+creating classes. To avoid conflicts, React uses className to define CSS classes
+
+
+
+What is a component?
+
+A component is a reusable and independent piece of the user interface. It is usually a JavaScript function that returns JSX, and multiple 
+components can be combined to build a complete React application.
+
+
+. Why are components reusable?
+
+Components are reusable because they are written once and can be used multiple times in different parts of an application. This reduces 
+code duplication, makes maintenance easier, and keeps the code organized
+
+
+
+
+Difference between functional and class components?
+
+A functional component is a JavaScript function that returns JSX and is the preferred approach in modern React. A class component is an 
+ES6 class that extends React.Component and uses a render() method. Today, functional components are preferred because they are simpler 
+and support Hooks
+
+
+
+
+What are props?
+
+Props (Properties) are used to pass data from a parent component to a child component. They are read-only and help make components 
+reusable
+
+
+. Can a child modify props?
+
+No. Props are read-only. A child component can only receive and use props. Only the parent component can change the values of 
+  props
+
+
+  //==========18-06-2026
+
+  What is State?
+
+State is a built-in React feature used to store data that belongs to a component and can change over time. When the state changes, React automatically re-renders the component 
+to update the UI.
+
+Why do we need State?
+
+We need state to manage dynamic data such as counters, form inputs, toggles, and other values that change during the application's lifecycle.
+
+What problem does State solve?
+
+State solves the problem of keeping the UI synchronized with changing data. When state changes, React automatically updates the displayed UI without manually manipulating the 
+DOM
+
+State is data that is managed within a React component and can change during the component's lifetime. When state changes, React automatically re-renders the component to 
+reflect the updated data in the UI. We use state to handle dynamic data like counters, forms, toggles, and user interactions
+
+
+
+
+
+
+
+
+//=======================19-6-2026
+
+
+
+Q1: What causes React to re-render?
+
+Answer:
+
+A React component re-renders when its state changes, when its props change, or when its parent component re-renders. React re-renders the component to calculate the updated UI.
+
+Q2: Does changing a normal variable trigger a re-render?
+
+Answer:
+
+No, changing a normal variable does not trigger a re-render because React does not track normal variables. React only tracks changes made through state setters or changes in props.
+
+Q3: What happens when state changes?
+
+Answer:
+
+When state changes, React schedules a re-render of the component. The component function runs again with the updated state, React compares the new output with the previous 
+output, and updates the necessary DOM elements.
+
+
+
+
+1. How do you handle events in React?
+
+Answer:
+
+Events in React are handled by attaching event handlers to JSX elements using camelCase event names such as onClick, onChange, and onSubmit. When the event occurs, the 
+associated function is executed.
+
+
+
+In HTML, event names are lowercase and event handlers are often written as strings. In React, event names use camelCase, and we pass JavaScript function references instead of 
+strings. React also wraps browser events in a Synthetic Event object to provide consistent behavior across different browsers.

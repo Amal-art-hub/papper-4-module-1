@@ -121,29 +121,164 @@
 
 // export default App
 
-
-function Header(){
-  return <h1>My website</h1>
-}
+//====================================
 
 
-function Footer(){
-  return <footer>2026 last i will get job</footer>
-}
+// function Header(){
+//   return <h1>My website</h1>
+// }
 
 
-function App(){
+// function Footer(){
+//   return <footer>2026 last i will get job</footer>
+// }
+
+
+// function App(){
+//   return (
+//     <>
+
+// <Header/>
+
+// <p>Hello world</p>
+
+// <Footer/>
+
+//     </>
+//   )
+// }
+
+// export default App;
+
+//=======================================
+
+// import Header from "./components/Header";
+// import Footer from "./components/Footer";
+// import Student from "./components/Student";
+
+
+// function App(){
+//   return (
+//     <>
+//     <Header/>
+//     <Student name="Amal"  age={29} />
+//      <Student name="rahulm"  age={25} />
+//      <Student name="anu"  age={22} />
+//     <Footer/>
+//     </>
+//   )
+// }
+
+// export default App;
+
+//=========================
+
+// function Welcome(prop){
+
+//    console.log(prop);
+//   return (
+//     <>
+//     <h1>Hello {prop.name}</h1>
+//     <p>Age:{prop.age}</p>
+   
+//     </>
+//   )
+
+  
+// }
+
+
+// function App(){
+//   return  (
+//   <>
+//     <Welcome name="Rahul"
+//   age={29}
+//   />
+
+//   <Welcome name="Anu"/>
+//   </>
+//   )
+// }
+
+
+// export default App;
+
+//====================
+
+// import {useState} from "react";
+
+// function Counter(){
+//   let [count,setCount]=useState(0);
+
+//   return (
+//     <>
+//     <h1>Count:{count}</h1>
+//     <button onClick={()=>setCount(count+1)}>
+//       Increase
+//     </button>
+    
+//     </>
+//   )
+// }
+
+
+
+
+// import { useState } from "react";
+
+// function Toggle() {
+
+//   const [show, setShow] = useState(false);
+
+//   return (
+//     <>
+//       <button onClick={() => setShow(!show)}>
+//         Toggle
+//       </button>
+
+//       {show && <h1>Hello React</h1>}
+//     </>
+//   );
+// }
+
+
+
+
+
+
+// function App(){
+//   return (
+//     <>
+//     <h1>My App</h1>
+//     <Toggle/>
+//     </>
+//   )
+// }
+
+// export default App;
+
+
+
+
+import { useState } from "react";
+
+function App() {
+
+  const [name, setName] = useState("");
+
   return (
     <>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
 
-<Header/>
-
-<p>Hello world</p>
-
-<Footer/>
-
+      <h2>{name}</h2>
     </>
-  )
+  );
+
+ 
 }
 
-export default App;
+
+ export default App;
