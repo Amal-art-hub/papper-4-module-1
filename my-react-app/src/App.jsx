@@ -260,25 +260,49 @@
 
 
 
-import { useState } from "react";
+// import { useState } from "react";
 
-function App() {
+// function App() {
 
-  const [name, setName] = useState("");
+//   const [name, setName] = useState("");
 
-  return (
-    <>
-      <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+//   return (
+//     <>
+//       <input
+//         value={name}
+//         onChange={(e) => setName(e.target.value)}
+//       />
 
-      <h2>{name}</h2>
-    </>
-  );
+//       <h2>{name}</h2>
+//     </>
+//   );
 
  
-}
+// }
+
+
+//  export default App;
+
+ //===============onclick
+
+
+ import {useState} from "react";
+
+ function App(){
+  const [count,setCount]=useState(0);
+  return (
+    <>
+    <h1>Counter</h1>
+    <h2>{count}</h2>
+
+    <button  onClick={()=>setCount(count+1)}>
+
+      Increment
+      
+    </button>
+    </>
+  )
+ }
 
 
  export default App;
