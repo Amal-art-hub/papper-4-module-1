@@ -286,23 +286,52 @@
  //===============onclick
 
 
- import {useState} from "react";
+//  import {useState} from "react";
 
- function App(){
-  const [count,setCount]=useState(0);
-  return (
-    <>
-    <h1>Counter</h1>
-    <h2>{count}</h2>
+//  function App(){
+//   const [count,setCount]=useState(0);
+//   return (
+//     <>
+//     <h1>Counter</h1>
+//     <h2>{count}</h2>
 
-    <button  onClick={()=>setCount(count+1)}>
+//     <button  onClick={()=>setCount(count+1)}>
 
-      Increment
+//       Increment
       
-    </button>
-    </>
-  )
- }
+//     </button>
+//     </>
+//   )
+//  }
 
 
- export default App;
+//  export default App;
+
+//================
+
+
+
+// import { useEffect } from "react";
+
+// function App() {
+
+//   useEffect(() => {
+//     console.log("Component rendered");
+//   }, []);
+
+//   return (
+//     <h1>Hello</h1>
+//   );
+// }
+
+// export default App;
+
+//============
+function App() {
+  return (
+    <div>
+      <h1>Hello</h1>
+      <p>Welcome</p>
+    </div>
+  );
+}
