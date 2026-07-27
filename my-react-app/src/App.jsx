@@ -327,14 +327,115 @@
 // export default App;
 
 //============
-function App() {
+
+// import {useState} from "react"
+
+// function App(){
+//   let [count,setCount]=useState(0);
+
+//   return(
+//     <>
+
+//      <h1>{count}</h1>
+
+//      <button onClick={()=>setCount(count+1)}>+</button>
+//       <button onClick={()=>setCount(count-1)}>-</button>
+//       <button onClick={()=>setCount(0)}>Reset</button>
+
+//     </>
+//   )
+// }
+
+// export default App;
+
+
+
+
+// import { useState } from "react";
+
+// function App() {
+//   const [like, setLikes] = useState(false);
+
+//   return (
+//     <>
+//       <h1>{like ? "❤️" : "🤍"} </h1>
+
+//       <button onClick={() => setLikes(!like)}>
+//         {like?"unlike":"like"}
+//       </button>
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+// import { useState } from "react";
+
+// function App() {
+//   const [isOn, setIsOn] = useState(false);
+
+//   return (
+//     <>
+//       <h1>{isOn ? "ON" : "OFF"}</h1>
+
+//       <button onClick={() => setIsOn(!isOn)}>
+//         Toggle
+//       </button>
+//     </>
+//   );
+// }
+
+// export default App;
+
+//==============
+
+// import {useState} from "react";
+
+// function App(){
+//   let [isOn,onfun]=useState(true);
+
+
+//   return (
+//     <>
+    
+//     <h1>{isOn?"light":"dark"}</h1>
+
+//     <button  onClick={()=>onfun(!isOn)}>
+//       {isOn?"Off":"On"}
+//     </button>
+    
+//     </>
+//   )
+// }
+
+// export  default App;
+
+//==============================
+
+
+import {useState}   from "react";
+
+
+function App(){
+
+  const [isShown,shownFun]=useState(true);
+
   return (
-    <div>
-      <h1>Hello</h1>
-      <p>Welcome</p>
-    </div>
-  );
+    <>
+    
+    <h1>{isShown?"Component is visible":"Conponent is hidden"}</h1>
+
+
+    <button  onClick={()=>shownFun(!isShown)}>
+
+     {isShown?"Hide Component":"Show Component"}
+
+    </button>
+    
+    </>
+  )
 }
 
-
-hihelncnv
+export default App;
