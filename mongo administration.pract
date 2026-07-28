@@ -1,0 +1,296 @@
+Assignments
+Database Monitoring and Performance Analysis
+Objective :
+Gain hands-on experience in monitoring MongoDB and analyzing query performance.
+
+Create a sample database, e.g., ecommerce.
+
+Create a collection named products with sample documents containing the following fields:
+name (String)
+price (Number)
+category (String)
+stock (Number)
+
+Check Database Health
+
+Run db.serverStatus() to check MongoDB server health and general metrics.
+Run db.currentOp() to monitor currently running operations.
+
+Query and Analyze Performance
+
+Write and execute 3–5 sample queries.
+For each query, append .explain("executionStats") to analyze query execution.
+Note key metrics like:
+executionTimeMillis
+totalDocsExamined
+totalKeysExamined
+
+Enable Profiling and Analyze Slow Queries
+
+Enable database profiling. (db.setProfilingLevel(1))
+Run various queries again to let MongoDB log them.
+Find slow queries using.
+
+Optimize Performance
+
+Identify at least two slow queries from the profiling data.
+Suggest and implement improvements (e.g., adding indexes).
+Re-run the same queries with .explain("executionStats") and compare metrics.
+
+Documentation & Deliverables
+
+Report
+Summary of server status and profiling level
+Query execution metrics before and after optimization
+Details of indexes added
+Screenshots or logs
+Output of explain("executionStats") for at least two queries (before and after)
+Output of profiling results (system.profile collection)
+
+
+
+
+
+Database Monitoring and Performance Analysis
+
+Objective :
+Practice MongoDB backup and restore techniques for effective data management and recovery.
+
+Database and Sample Data Setup
+
+Create a new MongoDB database (e.g., ecommerce_backup).
+Add two collections:
+users
+orders
+Insert sample data into both collections.
+
+Logical Backup with mongoexport
+
+Export the users collection to a JSON file
+
+Binary Backup with mongodump
+
+Create a binary backup of the entire database
+
+Simulate Data Loss and Restore
+
+Simulate a data loss by dropping the users collection
+Restore from JSON using mongoimport
+Restore from binary backup using mongorestore
+
+Automate Backup with Script or Cron Job
+
+Write a shell script (backup.sh) to automate mongodump
+Schedule a daily backup using cron:
+
+Deliverables
+
+Exported files:
+users_backup.json
+Binary backup directory from mongodump
+A document/report including:
+Steps followed
+Commands used for export, import, dump, and restore
+Screenshots or logs of before and after collection drop and restoration
+Any issues or learning points encountered
+(Optional) Script file for automated backup (backup.sh)
+
+
+
+
+
+
+
+
+
+User Management and Security Configuration
+Objective:
+Understand how to manage users, assign roles, and secure a MongoDB instance using authentication and TLS/SSL encryption.
+
+Enable Authentication in MongoDB
+
+Start MongoDB with authentication enabled
+Restart MongoDB to apply the configuration
+
+Create Users with Role-Based Access
+
+Connect without auth and create the first admin user.
+
+Authenticate as admin.
+
+Create the following users:
+Read-only user for “products” collection
+Read-write user for “orders” collection
+
+Test User Permissions
+
+Connect as each user
+Try the following actions and document results:
+readUser: Try inserting into products (should fail).
+writeUser: Try reading from and writing to orders (should succeed).
+writeUser: Try deleting from products (should fail).
+admin: Try all operations (should succeed).
+
+Configure TLS/SSL Encryption
+
+Generate or obtain TLS certificate and key files (self-signed or CA-issued)
+Update MongoDB config (mongod.conf) to enable TLS
+Restart MongoDB with the new configuration
+Connect using MongoDB client with SSL
+
+Deliverables
+
+Documentation:
+Commands for user creation and role assignments
+Authentication method used (--auth or config file)
+Description of which actions succeeded or failed for each user
+Steps to generate and configure TLS/SSL
+Screenshots:
+Terminal outputs showing permission success and failure for each user
+Connection over TLS/SSL (optional: include mongo --ssl output)
+Configuration Snippet:
+Relevant part of mongod.conf showing:
+
+Setting Up and Managing a Replica Set
+Objective:
+Configure and manage a MongoDB Replica Set to ensure high availability and data redundancy.
+
+Replica Set Setup
+
+Set up a MongoDB Replica Set consisting of three nodes:
+One primary node
+One secondary node
+One arbiter node
+Ensure all nodes are properly networked and can communicate with each other.
+
+Replica Set Initialization
+
+Initialize the Replica Set.
+Add the remaining nodes to the Replica Set.
+Verify the status of the Replica Set after adding the nodes.
+
+Simulate Failover and Observe Election
+
+Simulate a failure by stopping the current primary node.
+Observe the automatic election process and identify the new primary.
+Restart the original primary node and observe how it rejoins the Replica Set.
+
+Advanced Node Configuration
+
+Configure a hidden node intended for analytics or reporting workloads.
+Configure a delayed node that maintains a time-lagged copy of the primary node for recovery purposes.
+Verify both nodes appear correctly in the Replica Set status.
+
+Secure the Replica Set
+
+Enable keyfile authentication to secure communication between Replica Set members.
+Ensure only authenticated nodes can join the Replica Set.
+Verify secure inter-node communication is functioning properly.
+
+Deliverables
+
+A step-by-step written guide describing the entire Replica Set setup process.
+Logs or screenshots showing:
+The election process during primary failure
+The Replica Set status before and after failover
+A description of how the hidden and delayed nodes were configured and their intended purpose.
+Notes on any issues encountered and how they were resolved.
+
+
+Sharding Implementation and Data Distribution
+Objective:
+Practice configuring a MongoDB sharded cluster to achieve horizontal scalability and manage large datasets effectively.
+
+Sharded Cluster Setup
+
+Set up a MongoDB sharded cluster with the following components:
+One shard server
+One config server
+One query router (mongos)
+Ensure all components are correctly networked and running.
+
+Database and Data Preparation
+
+Create a new sample database and a collection.
+Populate the collection with at least 1,000 records to simulate a real-world data volume.
+
+Enable Sharding
+
+Choose an appropriate shard key based on the structure and access patterns of your dataset.
+Enable sharding for the database and shard the chosen collection using the selected shard key.
+
+Verify and Monitor Sharding
+
+Insert additional data into the sharded collection.
+Use appropriate monitoring tools or commands to verify that data is being distributed across shards.
+Review the current state of the cluster and data distribution.
+
+Implement Tag-Aware Sharding
+
+Configure zones/tags to associate specific data subsets (e.g., based on region or other criteria) with specific shards.
+Configure shard zone ranges to route the appropriate data to the corresponding shard.
+Verify that tag-aware sharding is working as intended by monitoring the data placement.
+
+Deliverables
+
+A report that includes:
+The complete sharded cluster setup process
+The rationale behind the chosen shard key
+Observations on how data was distributed across shards
+Explanation of the tag-aware sharding configuration
+Screenshots showing:
+Cluster status and shard information
+Output verifying data distribution
+Tag-aware sharding configuration and its effect
+
+
+
+Optimizing MongoDB Configuration for Performance
+Objective:
+Analyze and modify MongoDB server configuration to improve performance under a specific workload scenario.
+
+Setup Environment
+
+Set up a standalone MongoDB instance.
+Create and populate a sample dataset appropriate for a real-world use case (e.g., e-commerce).
+Ensure collections reflect the intended workload type (e.g., read-heavy or write-heavy).
+
+Configuration Tuning
+
+Identify and modify at least three performance-related parameters in the MongoDB configuration file.
+Adjust the settings based on the chosen workload characteristics.
+Document each configuration change and the reasoning behind it.
+
+Performance Testing
+
+Design a set of sample queries or operations representative of the workload.
+Run the test queries before applying configuration changes and record performance metrics.
+Apply the new configuration and restart the MongoDB instance.
+Re-run the same test queries and record updated performance metrics.
+
+Resource Monitoring
+
+Use monitoring tools such as mongostat or mongotop to track resource usage during query execution.
+Record system behavior, including memory usage, I/O activity, and operation throughput.
+
+Deliverables
+
+A modified MongoDB configuration file with comments clearly explaining the purpose of each change.
+A report that includes:
+Description of the initial workload scenario
+Configuration changes made and their rationale
+Performance comparison before and after optimization
+Output and analysis from monitoring tools used
+
+
+
+
+
+
+
+
+
+
+
+
+

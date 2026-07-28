@@ -126,3 +126,479 @@ B) Mobx Concepts → Observables, Actions, Computed values, Reactions
 C) Learn Integration with React 
 D) Observable with Class Components and Functional Components
 E) Understand the basics of what is makeObservable and makeAutoObservable
+
+
+
+
+
+//=============================
+
+
+Interviewer Feedback
+
+Good answer, Amal. 👍
+
+Score: 8.5/10
+
+You understand the lifecycle idea correctly. Your explanation is good for a beginner, but let's make it more interview-level.
+
+✅ What you did well
+
+You correctly explained:
+
+✔️ Lifecycle has three phases:
+Mounting
+Updating
+Unmounting
+✔️ Mounting means the component appears for the first time.
+✔️ Updating happens when state/props change and React renders again.
+✔️ Unmounting means the component is removed.
+
+Good foundation.
+
+Improvements for an interview
+
+Your mounting explanation:
+
+"when React execute initially"
+
+A better explanation:
+
+"Mounting is the phase when React creates the component instance, executes the component function for the first time, and places the returned JSX into the DOM."
+
+Your updating explanation:
+
+You said:
+
+"when the user does anything"
+
+Small correction.
+
+Not every user interaction causes an update.
+
+A better answer:
+
+"Updating happens when the component's state or props change. React re-renders the component with the new data and updates the UI."
+
+Examples:
+
+Button click
+      ↓
+setState()
+      ↓
+State changes
+      ↓
+Re-render
+
+or:
+
+Parent changes props
+      ↓
+Child receives new props
+      ↓
+Update phase
+
+Your unmounting explanation is correct:
+
+"when React removes any component"
+
+Exactly.
+
+Examples:
+
+Navigating to another page
+Conditional rendering changes
+
+Example:
+
+{showProfile && <Profile />}
+
+If:
+
+showProfile = false
+
+React removes <Profile />.
+
+That is unmounting.
+
+A strong interview answer would be:
+
+"Component lifecycle describes the different stages a React component goes through during its existence. The three main phases are mounting, updating, and unmounting. Mounting happens when a component is created and added to the DOM for the first time. Updating happens when the state or props of a component change, causing React to re-render it. Unmounting happens when a component is removed from the DOM, such as when navigating away or when conditional rendering removes it."
+
+That would be around 10/10.
+
+🎤 Next Question (Practical Coding)
+
+Interviewer:
+
+Create a React component that shows a message:
+
+Initially:
+
+Component is visible
+
+Add a button:
+
+Hide Component
+
+When clicking the button:
+
+Component is hidden
+
+Add another button:
+
+Show Component
+
+When clicking it again:
+
+Component is visible
+Requirements:
+Use useState.
+Use conditional rendering.
+Explain your state and logic while writing.
+
+Write the code as if you are doing a live coding round.
+
+Interviewer Feedback
+
+Good job, Amal. 👏 This is a correct solution.
+
+Score: 9/10
+
+You understood the main concept: boolean state + conditional rendering.
+
+✅ What you did well
+1. State creation
+const [isShown, shownFun] = useState(true);
+
+You created a boolean state.
+
+Initial value:
+
+isShown = true
+
+So initially:
+
+Component is visible
+
+Correct.
+
+2. Conditional rendering
+<h1>
+  {isShown ? "Component is visible" : "Component is hidden"}
+</h1>
+
+This is exactly the right approach.
+
+When:
+
+isShown = true
+
+Output:
+
+Component is visible
+
+When:
+
+isShown = false
+
+Output:
+
+Component is hidden
+3. Toggle logic
+onClick={() => shownFun(!isShown)}
+
+This is also correct.
+
+Flow:
+
+Initial:
+
+isShown = true
+
+Click:
+
+!true → false
+
+React updates:
+
+isShown = false
+
+UI changes.
+
+Click again:
+
+!false → true
+
+UI becomes visible again.
+
+Small improvements (interview level)
+1. Setter naming
+
+Instead of:
+
+shownFun
+
+React convention:
+
+setIsShown
+
+Example:
+
+const [isShown, setIsShown] = useState(true);
+
+Because anyone reading the code immediately understands it updates isShown.
+
+2. Typo
+
+You wrote:
+
+"Conponent is hidden"
+
+It should be:
+
+"Component is hidden"
+Improved version:
+import { useState } from "react";
+
+function App() {
+  const [isShown, setIsShown] = useState(true);
+
+  return (
+    <>
+      <h1>
+        {isShown ? "Component is visible" : "Component is hidden"}
+      </h1>
+
+      <button onClick={() => setIsShown(!isShown)}>
+        {isShown ? "Hide Component" : "Show Component"}
+      </button>
+    </>
+  );
+}
+
+export default App;
+Interviewer follow-up question 🎤
+
+You used:
+
+{isShown ? "Component is visible" : "Component is hidden"}
+
+This only changes the text.
+
+Now imagine I have:
+
+{isShown && <UserProfile />}
+Question:
+
+What happens when isShown becomes false?
+
+Does React:
+
+Hide the component using CSS?
+Remove the component from the DOM?
+Keep the component running but invisible?
+
+Explain your answer.
+
+i dont know
+
+Interviewer Feedback
+
+Good. Saying "I don't know" is better than guessing in an interview. 👍 This is actually a very important React lifecycle question.
+
+The correct answer is:
+
+✅ 2. Remove the component from the DOM
+
+Let's understand why.
+
+You have:
+
+{isShown && <UserProfile />}
+
+This is called conditional rendering.
+
+Case 1: isShown = true
+
+React sees:
+
+true && <UserProfile />
+
+The result is:
+
+<UserProfile />
+
+So React creates the component and shows it.
+
+Lifecycle:
+
+UserProfile
+     ↓
+Mount
+     ↓
+Appears on screen
+Case 2: isShown = false
+
+React sees:
+
+false && <UserProfile />
+
+The result is:
+
+false
+
+So React removes <UserProfile />.
+
+Lifecycle:
+
+UserProfile
+     ↓
+Unmount
+     ↓
+Removed from DOM
+
+It does not:
+
+❌ Hide it with CSS
+
+Example of CSS hiding:
+
+display: none;
+
+The component still exists.
+
+It does not:
+
+❌ Keep running invisibly.
+
+The component is completely removed.
+
+Interview answer:
+
+"When isShown becomes false, React removes the UserProfile component from the DOM because conditional rendering no longer returns that component. This triggers the unmount phase of the component lifecycle."
+
+That answer would impress an interviewer.
+
+Now let's continue the interview.
+
+🎤 Question 6 (Theory)
+
+You learned lifecycle. Now:
+
+Interviewer:
+
+Why do we need React Hooks?
+
+Before Hooks, how were components mainly written, and what problem did Hooks solve?
+
+Answer like you are in an interview.
+
+i dont know
+
+Interviewer Feedback
+
+That's okay, Amal. 👍 This is a slightly more advanced theory question. Many beginners know how to use Hooks before knowing why they were introduced.
+
+Let's learn the interview answer.
+
+Why do we need Hooks?
+
+Before Hooks, React mainly used class components to manage:
+
+State
+Lifecycle methods
+Side effects
+
+Example (old style):
+
+class Counter extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0
+    };
+  }
+
+  render() {
+    return (
+      <h1>{this.state.count}</h1>
+    );
+  }
+}
+
+The problem was:
+
+1. Functional components could not have state
+
+Before Hooks:
+
+function Counter() {
+  return <h1>0</h1>;
+}
+
+A functional component was only used for displaying UI.
+
+It could not use:
+
+State
+Lifecycle methods
+2. Class components became complicated
+
+Large class components had:
+
+Lots of lifecycle methods
+Duplicate logic
+Complex this handling
+
+Example:
+
+componentDidMount()
+        ↓
+componentDidUpdate()
+        ↓
+componentWillUnmount()
+
+Managing related logic became difficult.
+
+Hooks solved this.
+
+Hooks allow functional components to use React features.
+
+Examples:
+
+useState
+
+Gives state:
+
+const [count, setCount] = useState(0);
+useEffect
+
+Handles lifecycle and side effects:
+
+useEffect(() => {
+  console.log("Mounted");
+}, []);
+useRef
+
+Stores values and accesses DOM:
+
+const inputRef = useRef(null);
+Interview answer:
+
+"Hooks were introduced to allow functional components to use features like state and lifecycle methods. Before Hooks, these features were mainly available in class components. Hooks made functional components more powerful, reduced complexity, and allowed developers to reuse stateful logic more easily."
+
+Don't worry that you didn't know this. In your learning plan, this comes after understanding lifecycle and before deep useEffect.
+
+🎤 Next Interview Question (Theory)
+
+Interviewer:
+
+What is the difference between:
+
+useState
+useRef
+
+When would you use useState, and when would you use useRef?
+
+Answer in your own words.
