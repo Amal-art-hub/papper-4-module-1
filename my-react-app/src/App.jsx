@@ -415,27 +415,63 @@
 //==============================
 
 
-import {useState}   from "react";
+// import {useState}   from "react";
 
+
+// function App(){
+
+//   const [isShown,shownFun]=useState(true);
+
+//   return (
+//     <>
+    
+//     <h1>{isShown?"Component is visible":"Conponent is hidden"}</h1>
+
+
+//     <button  onClick={()=>shownFun(!isShown)}>
+
+//      {isShown?"Hide Component":"Show Component"}
+
+//     </button>
+    
+//     </>
+//   )
+// }
+
+// export default App;
+
+//================
+
+// function clickeme(){
+//   console.log("Hello reac");
+  
+// }
+
+
+// function App(){
+//   return (
+//     <>
+//     <button  onClick={()=>clickeme()}>Click me</button>
+//     </>
+//   )
+// }
+
+// export default App;
+
+//======================
+import {useState} from "react"
 
 function App(){
-
-  const [isShown,shownFun]=useState(true);
+  const [name,setName]=useState("")
 
   return (
     <>
-    
-    <h1>{isShown?"Component is visible":"Conponent is hidden"}</h1>
+    <h1>Hello  {name}</h1>
 
-
-    <button  onClick={()=>shownFun(!isShown)}>
-
-     {isShown?"Hide Component":"Show Component"}
-
-    </button>
-    
+    <input type="text" onChange={(e)=>setName(e.target.value)} />
     </>
   )
 }
+
 
 export default App;
