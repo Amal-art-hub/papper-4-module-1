@@ -81,59 +81,194 @@
 // export default Student;
 
 
+//======================================================
+
+
+
+// import {useEffect,useState}  from "react";
+
+
+
+// function App(){
+
+
+//   const [users,setdata]=useState([]);
+
+
+// useEffect(()=>{
+
+
+// const fetchdata=async()=>{
+
+
+// try  {
+
+//   const response=await fetch("https://jsonplaceholder.typicode.com/users");
+
+//   const data=await response.json();
+
+//   setdata(data)
+// }catch(error){
+//   console.error(error);
+// }
+
+// }
+
+
+// fetchdata()
+
+
+// },[]);
+
+// return (
+
+//   <div>
+
+// {
+// users.map((user)=> <p  key={user.id}>{user.name}</p>)
+
+// }
+
+
+//   </div>
+// )
+
+// }
+
+
+// export default App;
+
+//========================================================useref
+
+
+
+
+// import {useRef}  from "react";
+
+// function InputFocus(){
+
+// let input=useRef(null);
+
+// let handlefoc=()=>{
+// input.current.focus();
+
+// console.log(input.current.value)
+// }
+
+
+// return (
+
+//   <>
+  
+//   <input type="text"  ref={input} />
+
+
+//       <br />
+//       <br />
+
+//   <button onClick={handlefoc}> focus on input</button>
+  
+//   </>
+
+// )
+
+// }
+
+// export default InputFocus;
+
+//======================================
+
+// import {useRef}  from "react";
+
+
+// function InputValue(){
+
+//   let inputref=useRef(null);
+
+//   let showfun=()=>{
+//     console.log(inputref.current.value)
+//   }
+
+
+//   return (
+
+//     <>
+    
+//     <input type="text"  ref={inputref} />
+
+//     <br/>
+//     <br/>
+
+//     <button  onClick={showfun}> click here to show</button>
+    
+//     </>
+
+//   )
+// }
+
+// export default InputValue;
+
+//==================
+
+
+// import {useState}  from "react";
+
+
+// function InputExample(){
+
+//   const [state,setState]=useState(" ");
+
+//   return (
+
+// <>
+
+// <input type="text"  onChange={(event)=>setState(event.target.value)}/>
+
+// <p>{state}</p>
+
+// </>
+
+//   )
+// }
+
+
+
+// export default InputExample;
+
 //=======================
 
 
+import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 
-import {useEffect,useState}  from "react";
-
-
+import Home from "./pages/Home";
+import About from "./pages/About";
 
 function App(){
+  return (
+
+    <BrowserRouter>
+    
+    <nav>
+      <Link to="/">Home</Link>
 
 
-  const [users,setdata]=useState([]);
+      {"|"}
+      <Link to="/about">About</Link>
+    </nav>
 
 
-useEffect(()=>{
+<Routes>
+<Route path="/" element={<Home/>}></Route>
+<Route path="/about" element={<About/>}></Route>
 
 
-const fetchdata=async()=>{
+</Routes>
 
 
-try  {
 
-  const response=await fetch("https://jsonplaceholder.typicode.com/users");
 
-  const data=await response.json();
-
-  setdata(data)
-}catch(error){
-  console.error(error);
+    </BrowserRouter>
+  )
 }
-
-}
-
-
-fetchdata()
-
-
-},[]);
-
-return (
-
-  <div>
-
-{
-users.map((user)=> <p  key={user.id}>{user.name}</p>)
-
-}
-
-
-  </div>
-)
-
-}
-
 
 export default App;
