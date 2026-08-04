@@ -238,37 +238,106 @@
 //=======================
 
 
-import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
+// import {BrowserRouter,Routes,Route,Link} from "react-router-dom";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+
+// function App(){
+//   return (
+
+//     <BrowserRouter>
+    
+//     <nav>
+//       <Link to="/">Home</Link>
+
+
+//       {"|"}
+//       <Link to="/about">About</Link>
+//     </nav>
+
+
+// <Routes>
+// <Route path="/" element={<Home/>}></Route>
+// <Route path="/about" element={<About/>}></Route>
+
+
+// </Routes>
+
+
+
+
+//     </BrowserRouter>
+//   )
+// }
+
+// export default App;
+
+//=================
+
+// import {BrowserRouter,Routes,Route}  from "react"
+
+// import Login from "./pages/Login";
+// import Home from "./pages/Home";
+
+// function App(){
+
+// return (
+
+//   <>
+//   <BrowserRouter>
+//   <Routes>
+
+
+// <Route path="/" element={<Home/>}></Route>
+// <Route  path="/Login" element={<Login/>}></Route>
+
+//   </Routes>
+  
+  
+//   </BrowserRouter>
+  
+  
+//   </>
+// ) 
+
+// }
+
+// export default App;
+
+//===============================
+
+
+// import { useState } from "react";
+
+// function App() {
+
+//   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+//   return (
+//     <>
+//       <p>
+//         {isLoggedIn ? "Welcome, User!" : "Please Login"}
+//       </p>
+
+//       <button
+//         onClick={() => setIsLoggedIn(!isLoggedIn)}
+//       >
+//         {isLoggedIn ? "Logout" : "Login"}
+//       </button>
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+//==================
+
+
+import {useState}  from "react";
+
 
 function App(){
-  return (
-
-    <BrowserRouter>
-    
-    <nav>
-      <Link to="/">Home</Link>
-
-
-      {"|"}
-      <Link to="/about">About</Link>
-    </nav>
-
-
-<Routes>
-<Route path="/" element={<Home/>}></Route>
-<Route path="/about" element={<About/>}></Route>
-
-
-</Routes>
-
-
-
-
-    </BrowserRouter>
-  )
+  const [Email]
 }
-
-export default App;
